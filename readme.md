@@ -13,8 +13,6 @@ Create your blog server
     ``mysql -u root -p app < app_scheme.sql``
     * turn off ONLY_FULL_GROUP_BY
     ``SET GLOBAL sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));``
-    * insert project and article two type into table
-    ``INSERT INTO `blogtype` (`name`) VALUES (`project`), (`article`);``
 2. write the config file
     * write the following server config file, name should be app.yaml and put under app/config
     ```yaml
