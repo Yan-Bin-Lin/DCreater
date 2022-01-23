@@ -1,0 +1,37 @@
+{{ define "container/blog"}}
+    <div class="card my-4">
+        <!-- Title -->
+        <h1 class="card-header">{{ .title }}</h1>
+
+        <div class="card-body">
+            <!-- Author -->
+            <h5 class="card-subtitle mb-2">
+                <a href="/blog/{{ .owner }}" class="text-dark">
+                    {{ .nickname }}
+                    <span class="text-muted">
+                                @{{ .owner }}
+                            </span>
+                </a>
+            </h5>
+            <!-- Date/Time -->
+            <p>Update on {{ .updatetime }}</p>
+
+            <hr>
+
+            <!-- Preview Image -->
+            <img class="img-fluid rounded hide" src="placehold.it/900x300" alt="">
+
+            <!-- description -->
+            <p class="lead">{{.description}}</p>
+
+            <!-- Post Content -->
+            {{if .content}}
+                <div id="content">
+                    {{template "content"}}
+                </div>
+            {{end}}
+
+        </div>
+
+    </div>
+{{ end }}

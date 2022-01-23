@@ -1,0 +1,15 @@
+-1: Ok
+0: Unknown
+
+# 系统級错误
+1500001: System error
+1500002: Service unavailable
+1500003: Connection error
+1500004: Wrong error type
+1500005: Wrong logger type
+1500006: database error
+
+# 應用級錯誤
+2400000: Application error
+2400001: Parameter error
+2400002: Permission denied

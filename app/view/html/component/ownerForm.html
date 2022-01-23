@@ -1,0 +1,29 @@
+{{ define "form/owner"}}
+    <div id="formContainer" class="container my-5">
+        <div class="row">
+            <div class="col">
+                <div class="card mt-3">
+                    <div class="card-body">
+                        <form id="NewOwnerForm" style="display: block;">
+                            <div class="form-group">
+                                <label for="NewOwnerName">Owner Name</label>
+                                <input id="NewOwnerName" type="text" class="form-control" placeholder="限制50字(不可重複)">
+                                <p class="text-danger invisible">超過50字</p>
+
+                                <label for="NewNickName">暱稱</label>
+                              <input id="NewNickName" type="text" class="form-control" placeholder="限制50字(必填)">
+                                <p class="text-danger invisible">超過50字</p>
+
+                                <label for="NewOwnerDescription">簡述</label>
+                                <input id="NewOwnerDescription" type="text" class="form-control" placeholder="簡單自我介紹 (限制255字)">
+                                <p class="text-danger invisible">超過255字</p>
+
+                                <button id="OwnerSubmitBtn" type="submit" class="btn btn-primary float-right">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{{ end }}

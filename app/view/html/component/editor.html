@@ -1,0 +1,41 @@
+{{ define "editor"}}
+    <div id="editorContainer" class="container my-5">
+        <div class="row">
+            <div class="col">
+                <div class="card mt-3">
+                    <div class="card-body">
+                        <form id="NewBlogForm" style="display: block;">
+                            <div class="form-group">
+                                <label for="NewBlogName">Blog Name</label>
+                                <input id="NewBlogName" type="text" class="form-control" placeholder="限制100字(必填)">
+                                <p class="text-danger invisible">超過100字</p>
+
+                                <label for="NewBlogDescription">簡述</label>
+                                <input id="NewBlogDescription" type="text" class="form-control" placeholder="能吸引人點進來看全文的簡短前言 (限制255字)">
+                                <p class="text-danger invisible">超過255字</p>
+
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <label class="input-group-text" for="inputGroupSelect01">類型</label>
+                                    </div>
+                                    <select class="custom-select" id="TypeSelect">
+                                        <option value="1">Project</option>
+                                        <option value="2">Article</option>
+                                    </select>
+                                </div>
+
+                                <label for="editor">內文</label>
+                                <div id="editor"></div>
+                                <p class="text-danger invisible">內文不得為空</p>
+
+                                <button id="EditorSubmitBtn" type="submit" class="btn btn-primary float-right">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- Local JS-->
+                <script src="https://dcreater.com/static/js/editor.js"></script>
+            </div>
+        </div>
+    </div>
+{{ end }}

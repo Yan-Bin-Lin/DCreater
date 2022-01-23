@@ -1,0 +1,20 @@
+{{ define "list/blog" }}
+    <div class="blog-list"></div>
+    <!-- Blog Post template-->
+    <template id="blog-list-tmpl">
+        <div class="card my-4">
+            <img class="card-img-top" src="" alt="">
+            <div class="card-body">
+                <a class="blog-href" href="#">
+                    <h2 class="card-title blog-list-title text-dark"></h2>
+                </a>
+                <p class="card-text blog-list-description"></p>
+            </div>
+            <div class="card-footer">
+                <a href="#" class="owner-href blog-list-owner"></a>
+                ‧
+                <a href="#" class="blog-list-createtime text-muted"></a>
+            </div>
+        </div>
+    </template>
+{{ end }}

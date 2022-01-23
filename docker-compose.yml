@@ -1,0 +1,35 @@
+version: '3'
+services:
+  db:
+    image: mysql:8.0
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: FE6A9E93D16A40BCD912103AC93B9810237D6DC7
+      MYSQL_DATABASE: app
+    volumes: 
+      - ./database/maindata:/var/lib/mysql
+  app:
+    image: yanbinlin/creater:latest
+    ports:
+      - "8000:8000"
+      - "8001:8001"
+      - "8002:8002"
+    depends_on:
+      - db
+    volumes: 
+      - ./app/view:/creater/view
+      - ./app/config:/creater/config
+      - ./file:/creater/file
+      - ./log:/creater/log
+  proxy:
+    image: nginx:1.20
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes: 
+      - ./config/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+      - ./app/view/img/icon:/view/img/icon
+      - ./cert:/etc/nginx/certs
+    depends_on:
+      - app

@@ -1,0 +1,41 @@
+{{define "container/sign"}}
+
+<script src="https://www.google.com/recaptcha/api.js?render=6LcCuJwdAAAAAI2ITaq_01Xobie7X2FK9hTLuEvP"></script>
+
+<div id="singContainer" class="fixed-center" style="display:none;">
+    <article class="card">
+        <div class="card-body">
+            <button id="closeSignBtn" type="button" class="close" data-dismiss="alert">&times;</button>
+            <a href="" class="fixed-center-H hide btn btn-outline-primary">Sign up</a>
+            <h4 class="card-title mb-4 mt-1">Sign in</h4>
+            <form id="SignForm" action="https://dcreater.com/account/login" method="post">
+                <div class="form-group">
+                    <label>Your user name</label>
+                    <input id="InputUserName" name="" class="form-control" type="text">
+                </div>
+                <div class="form-group">
+                    <a class="float-right" href="#">Forgot?</a>
+                    <label>Your password</label>
+                    <input id="InputPassword" class="form-control" placeholder="******" type="password">
+                </div>
+                <p id="AlertWrongParam" class="text-danger" style="display:none;">Wrong user name or password!!</p>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <div class="checkbox">
+                                <label> <input type="checkbox"> Save password </label>
+                            </div> <!-- checkbox .// -->
+                        </div>
+                        <div class="form-group">
+                            <button id="SigninSubmitBtn" class="btn btn-primary btn-block" type="submit">
+                                Sign in
+                            </button>
+                        </div> <!-- form-group// -->
+                    </div>
+                </div> <!-- .row// -->
+                No account? <a href="#">Sign up</a>
+            </form>
+        </div>
+    </article>
+</div>
+{{end}}

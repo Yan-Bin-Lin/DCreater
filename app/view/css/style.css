@@ -1,0 +1,28 @@
+.hide {
+    display: none;
+}
+
+body {
+    width: 100%;
+    background: whitesmoke;
+}
+
+.fixed-center {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0 auto;
+}
+
+.abs-center-H {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    margin: 0 auto;
+}
+
+.tui-editor-contents {
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    font-size: 1rem;
+}

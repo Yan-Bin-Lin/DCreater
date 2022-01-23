@@ -1,0 +1,202 @@
+{{define "index"}}
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    {{template "head" .}}
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    {{template "navigation" . }}
+
+    <div id="meta" class="hide">
+        {{ .meta }}
+    </div>
+
+    <!-- Page Content -->
+    <main class="container mt-5">
+
+        <div class="row">
+            <!-- Post Content Column -->
+            <div class="col-lg-8">
+                <!-- Blog Post -->
+                {{if not .root}}
+                {{template "container/blog" . }}
+                <hr>
+                {{end}}
+
+                <!-- Blog List -->
+                {{if .list}}
+                {{ template "list/blog" . }}
+                {{end}}
+
+                <!-- Comments Form -->
+                <div id="comment" class="hide">
+                    <div class="card my-4">
+                        <h5 class="card-header">Leave a Comment:</h5>
+                        <div class="card-body">
+                            <form>
+                                <div class="form-group">
+                                    <textarea class="form-control" rows="3"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Single Comment -->
+                    <div class="media mb-4">
+                        <img class="d-flex mr-3 rounded-circle" src="" alt="">
+                        <div class="media-body">
+                            <h5 class="mt-0">Commenter Name</h5>
+                            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.
+                            Cras
+                            purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac
+                            nisi
+                            vulputate fringilla. Donec lacinia congue felis in faucibus.
+                        </div>
+                    </div>
+
+                    <!-- Comment with nested comments -->
+                    <div class="media mb-4">
+                        <img class="d-flex mr-3 rounded-circle" src="" alt="">
+                        <div class="media-body">
+                            <h5 class="mt-0">Commenter Name</h5>
+                            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.
+                            Cras
+                            purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac
+                            nisi
+                            vulputate fringilla. Donec lacinia congue felis in faucibus.
+
+                            <div class="media mt-4">
+                                <img class="d-flex mr-3 rounded-circle" src="" alt="">
+                                <div class="media-body">
+                                    <h5 class="mt-0">Commenter Name</h5>
+                                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
+                                    sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+                                    Fusce
+                                    condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in
+                                    faucibus.
+                                </div>
+                            </div>
+
+                            <div class="media mt-4">
+                                <img class="d-flex mr-3 rounded-circle" src="" alt="">
+                                <div class="media-body">
+                                    <h5 class="mt-0">Commenter Name</h5>
+                                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
+                                    sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+                                    Fusce
+                                    condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in
+                                    faucibus.
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar Widgets Column -->
+            <div class="col-md-4">
+
+                <!-- tag -->
+                <div class="card my-4 hide">
+                    <h5 class="card-header">Tag</h5>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <ul class="list-unstyled mb-0">
+                                    <li>
+                                        <a href="#">Web Design</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">HTML</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Freebies</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-6">
+                                <ul class="list-unstyled mb-0">
+                                    <li>
+                                        <a href="#">JavaScript</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">CSS</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Tutorials</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- path -->
+                <div class="card my-4 hide">
+                    <h5 class="card-header">Path</h5>
+                    <div class="card-body">
+                        <a href="./..">
+                            path
+                        </a>
+                        <span>
+                            <svg class="" width="24px" height="24px" fill="#000000">
+                                <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path>
+                            </svg>
+                        </span>
+                        temp
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <!-- /.row -->
+
+    </main>
+    <!-- /.container -->
+
+    <!-- addition window -->
+
+    <!-- sign in window -->
+    {{template "container/sign"}}
+
+    <!-- editor -->
+    {{ template "editor" }}
+    {{template "form/owner"}}
+
+    <!-- Footer -->
+    {{template "footer" . }}
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+    <!-- Editor's JS -->
+    <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
+    <!-- Editor's Plugin -->
+    <script
+        src="https://uicdn.toast.com/editor-plugin-code-syntax-highlight/latest/toastui-editor-plugin-code-syntax-highlight-all.min.js"></script>
+    <script
+        src="https://uicdn.toast.com/tui-color-picker/v2.2.6/tui-color-picker.min.js"></script>
+    <script
+        src="https://uicdn.toast.com/editor-plugin-color-syntax/latest/toastui-editor-plugin-color-syntax.js"></script>
+    <script
+        src="https://uicdn.toast.com/editor-plugin-table-merged-cell/latest/toastui-editor-plugin-table-merged-cell.min.js"></script>
+    <!--local script-->
+    <script src="https://dcreater.com/static/js/owner.js"></script>
+    <script src="https://dcreater.com/static/js/main.js"></script>
+    <script src="https://dcreater.com/static/js/sign.js"></script>
+    <script src="https://dcreater.com/static/js/account.js"></script>
+</body>
+
+</html>
+{{end}}
